@@ -11,7 +11,9 @@ function createWindow() {
         frame: false,
         resizable: false,
         width: 550, 
-        height: 350
+        height: 350,
+        // Don't show the window until it ready, this prevents any white flickering
+        show: false
     });
 
     // and load the index.html of the app.
@@ -26,12 +28,17 @@ function createWindow() {
 
     // Emitted when the window is closed.
     win.on('closed', () => win = null);
+
+    // Show window when page is ready
+    win.once('ready-to-show', function () {
+        win.show()
+    });
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.once('ready', createWindow);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
