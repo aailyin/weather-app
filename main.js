@@ -10,8 +10,8 @@ function createWindow() {
     win = new BrowserWindow({
         frame: false,
         resizable: false,
-        width: 550, 
-        height: 350,
+        width: 1050, //TODO: back to 550 
+        height: 650, //TODO: back to 350
         // Don't show the window until it ready, this prevents any white flickering
         show: false
     });
@@ -24,14 +24,14 @@ function createWindow() {
     }));
 
     // just for debugging
-    //win.webContents.openDevTools();
+    win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     win.on('closed', () => win = null);
 
     // Show window when page is ready
     win.once('ready-to-show', function () {
-        win.show()
+        win.show();
     });
 }
 
