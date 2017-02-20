@@ -16,4 +16,4 @@ class WeatherAPI {
     }
 }
 
-//export default WeatherAPI
+module.exports = WeatherAPI;

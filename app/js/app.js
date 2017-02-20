@@ -1,4 +1,5 @@
-//import WeatherAPI from 'weather-api';
+const WeatherAPI = require('./js/weather-api.js');
+const {ipcRenderer} = require('electron');
 
 class App {
     constructor() {
@@ -14,5 +15,9 @@ const app = new App();
 
 $(document).ready(()=>{
     app.displayWeather();
+
+    $('#btnClose').on('click', ()=>{
+        ipcRenderer.send('close-main-window');
+    });
 });
 
