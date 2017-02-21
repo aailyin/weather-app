@@ -1,6 +1,9 @@
 html {
     max-height: 650px;
     height: 100%;
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 body {
@@ -23,7 +26,7 @@ header span {
     float: left;
     display: block;
     padding: 7px 0 7px 15px;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 header span.close {
@@ -48,13 +51,14 @@ footer {
 section {
     padding: 10px 60px;
     height: 576px;
+    color: rgb(11, 202, 0);
 }
 
 .brown-part {
     position: absolute;
     top: 27px;
     width: 45px;
-    max-height: 596px;
+    max-height: 596px; 
     height: 100%;
     background-color: rgb(118, 53, 10); 
 }
@@ -77,6 +81,22 @@ section {
     border-right: 4px solid #5d2704;    
 }
 
-#cities {
-    -webkit-app-region: no-drag;    
+.cities {
+    -webkit-app-region: no-drag;  
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #000;
+    color:   rgb(11, 202, 0);
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid rgb(11,202,0)
+}
+
+.data li {
+    margin-bottom: 20px;
+    width: 90%;
+    border-bottom: 1px solid;
+    height: 40px;
+    line-height: 40px;
 }

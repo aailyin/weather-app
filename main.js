@@ -13,7 +13,7 @@ function createWindow() {
     win = new BrowserWindow({
         frame: false,
         resizable: false,
-        width: 1050, //TODO: back to 550 
+        width: 1150, //TODO: back to 550 
         height: 650, //TODO: back to 350
         // Don't show the window until it ready, this prevents any white flickering
         show: false
