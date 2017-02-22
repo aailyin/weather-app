@@ -50,7 +50,7 @@ footer {
 
 section {
     padding: 10px 60px;
-    height: 576px;
+    height: 276px;
     color: rgb(11, 202, 0);
 }
 
@@ -58,13 +58,13 @@ section {
     position: absolute;
     top: 27px;
     width: 45px;
-    max-height: 596px; 
+    max-height: 296px; 
     height: 100%;
     background-color: rgb(118, 53, 10); 
 }
 
 .left-column, .right-column {
-    height: 100%;
+    height: 96%;
 }
 .left-column {
     float: left;
@@ -99,4 +99,44 @@ section {
     border-bottom: 1px solid;
     height: 40px;
     line-height: 40px;
+}
+
+.data li span {
+    float: right;
+}
+
+.image-status {
+    margin-top: 32px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.image-status img {
+    width: 100%;
+    margin-left: 30px;
+}
+
+.mask {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 27px;
+    height: 296px;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.6;
+}
+
+.loading .mask {
+    display: block;
+}
+
+.details {
+    text-align: center;
+}
+
+a {
+    -webkit-app-region: no-drag;
+    font-size: 14px;
+    color: #ccc;  
 }

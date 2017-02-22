@@ -3,6 +3,7 @@ const path = require('path');
 const url = require('url');
 
 // hot reload for electron
+// should be commented befor packaging
 require('electron-reload')(__dirname);
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -13,8 +14,8 @@ function createWindow() {
     win = new BrowserWindow({
         frame: false,
         resizable: false,
-        width: 1150, //TODO: back to 550 
-        height: 650, //TODO: back to 350
+        width: 550, //TODO: back to 550 
+        height: 350, //TODO: back to 350
         // Don't show the window until it ready, this prevents any white flickering
         show: false
     });
@@ -27,7 +28,7 @@ function createWindow() {
     }));
 
     // just for debugging
-    win.webContents.openDevTools();
+    //win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     win.on('closed', () => win = null);

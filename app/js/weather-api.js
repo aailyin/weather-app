@@ -1,18 +1,19 @@
 class WeatherAPI {
-    constructor(url) {
-        this.url = url;
-
-        //TODO: mock
-        if (!url) {
-            this.data = { data: 'Cool weather!'};
-        }
+    constructor() {
+        this.data = null;
     }
-    getData() {
-        if(this.data) {
-            return this.data;
-        } else {
-            //fetch this.url
-        }
+    getData(loc, callback) {
+        $.simpleWeather({
+            location: loc,
+            woeid: '',
+            unit: 'c',
+            success: function (data){
+                callback(data);
+            },
+            error: function (err) {
+                callback(null, err);
+            }
+        });
     }
 }
 
