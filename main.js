@@ -4,7 +4,7 @@ const url = require('url');
 
 // hot reload for electron
 // should be commented befor packaging
-require('electron-reload')(__dirname);
+//require('electron-reload')(__dirname);
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
