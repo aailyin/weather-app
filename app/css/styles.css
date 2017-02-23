@@ -131,6 +131,10 @@ section {
     display: block;
 }
 
+.loading img {
+    display: none;
+}
+
 .details {
     text-align: center;
 }

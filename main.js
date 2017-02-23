@@ -8,16 +8,17 @@ require('electron-reload')(__dirname);
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win;
+let win, detailsWin;
 
 function createWindow() {
     win = new BrowserWindow({
         frame: false,
         resizable: false,
-        width: 550, //TODO: back to 550 
-        height: 350, //TODO: back to 350
+        width: 550, 
+        height: 350, 
         // Don't show the window until it ready, this prevents any white flickering
-        show: false
+        show: false,
+        icon: path.resolve(__dirname, 'app', 'css', 'app_icon.png')
     });
 
     // and load the index.html of the app.
@@ -61,6 +62,28 @@ app.on('activate', () => {
     }
 });
 
+//Events
 ipcMain.on('close-main-window', (event, arg) => {
     app.quit();
+});
+
+// event to open a window and load an extra resource
+ipcMain.on('open-details', (event, link) => {
+    if (detailsWin) {
+        detailsWin.close();
+    }
+
+    detailsWin = new BrowserWindow({
+        height: 1000,
+        width: 1600,
+        icon: path.resolve(__dirname, 'app', 'css', 'app_icon.png'),
+        webPreferences: {
+            nodeIntegration: false
+        }
+    });
+
+    detailsWin.setMenu(null);
+    detailsWin.loadURL(link);
+    //detailsWin.webContents.executeJavaScript();
+    detailsWin.on('closed', () => detailsWin = null);
 });
