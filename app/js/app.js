@@ -24,6 +24,7 @@ class App {
 $(document).ready(()=>{
     const app = new App();
     let loc = $('#cities').val();
+
     app.displayWeather(loc);
 
     $('#btnClose').on('click', ()=>{
